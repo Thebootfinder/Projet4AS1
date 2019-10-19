@@ -5,6 +5,7 @@
  * puis node server.js
  * exemple complet à l'adresse https://github.com/Musinux/first-vue-app
  */
+
 const express = require('express')
 const bodyParser = require('body-parser')
 const morgan = require('morgan')
@@ -13,75 +14,45 @@ const session = require('express-session')
 
 const app = express()
 
+app.use(cors({
+  credentials: true,
+  origin: 'http://localhost:8080'
+}))
+
 app.use(session({
   secret: 'blablabla', // changez cette valeur
   resave: false,
   saveUninitialized: true,
   cookie: { secure: false } // ne changez que si vous avez activé le https
 }))
+
 app.use(morgan('dev'))
 app.use(bodyParser.json())
 app.use(cors())
 
 const users = [{
-  username: 'admin',
-  password: 'changethispassword'
+  ID: 'admin',
+  Pass: 'admin'
 }]
 
-app.get('/api/test', (req, res) => {
-  console.log('ce console.log est appelé au bon moment')
-  res.json([
-    {
-      title: 'truc',
-      content: 'machin'
-    }, {
-      title: 'truc2',
-      content: 'machin2'
-    }
-  ])
-})
-
-app.get('/api/login', (req, res) => {
-
+app.post('/api/login', (req, res) => {
+  console.log('req.body', req.body)
   if (!req.session.userId) {
-   
-      // connect the user
-      req.session.userId = 1000 // connect the user, and change the id
+    const isLoginCorrect = users.find(u => u.ID === req.body.username && u.Pass === req.body.password)
+    if (!isLoginCorrect) {
       res.json({
-        message: 'connected'
+        status: false
       })
     } else {
-    res.status(401)
-    res.json({
-      message: 'you are already connected'
-    })
-  }
-})
-
-app.get('/api/logout', (req, res) => {
-  if (!req.session.userId) {
-    res.status(401)
-    res.json({
-      message: 'you are already disconnected'
-    })
+      req.session.userId = 1
+      console.log('UserID: ' + req.session.userId)
+      res.json({
+        status: true
+      })
+    }
   } else {
-    req.session.userId = 0
-    res.json({
-      message: 'you are now disconnected'
-    })
-  }
-})
-
-app.get('/api/admin', (req, res) => {
-  if (!req.session.userId || req.session.isAdmin === false) {
     res.status(401)
-    res.json({ message: 'Unauthorized' })
-    return
   }
-
-  res.json({
-    message: 'congrats, you are connected'
-  })
 })
 
 const port = process.env.PORT || 4000
