@@ -75,6 +75,13 @@ app.post('/api/CreerUser', (req, res) => {
   })
 })
 
+app.post('/api/Logout', (req, res) => {
+  req.session.destroy()
+  if (!req.session) {
+    console.log('Compte deco')
+  }
+})
+
 const port = process.env.PORT || 4000
 app.listen(port, () => {
   console.log(`listening on ${port}`)
