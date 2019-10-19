@@ -50,9 +50,29 @@ app.post('/api/login', (req, res) => {
         status: true
       })
     }
-  } else {
-    res.status(401)
   }
+})
+
+app.post('/api/Register', (req, res) => {
+  const test = users.find(u => u.ID === req.body.username)
+  if (!test) {
+    res.json({
+      status: true
+    })
+  } else {
+    res.json({
+      status: false
+    })
+  }
+})
+
+app.post('/api/CreerUser', (req, res) => {
+  console.log('req.body', req.body)
+  console.log('req.query', req.query)
+  users.push({
+    ID: req.body.username,
+    Pass: req.body.password
+  })
 })
 
 const port = process.env.PORT || 4000
