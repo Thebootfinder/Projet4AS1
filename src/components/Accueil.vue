@@ -41,8 +41,6 @@
             <v-list-item-title @click="LienLogin()" v-text="subItem.title4"></v-list-item-title>
             <v-list-item-title @click="LienRules()" v-text="subItem.title5"></v-list-item-title>
             <v-list-item-title @click="LienContact()" v-text="subItem.title6"></v-list-item-title>
-            
-            <v-list-item-title v-text="subItem.title"></v-list-item-title>
           </v-list-item-content>
         </v-list-item>
       </v-list-group>

@@ -28,22 +28,20 @@
     >
 
             <div class="my-2">
-         <router-link v-bind:to="'/test1'"><v-btn text color="white">Home</v-btn></router-link>
+         <router-link v-bind:to="'/'"><v-btn text color="white">Home</v-btn></router-link>
       </div>
               <div class="my-2">
           <router-link v-bind:to="'/team'"><v-btn text color="white">Team</v-btn></router-link>
       </div>
-
-      <v-btn
-        v-for="link in links"
-        :key="link"
-        color="white"
-        text
-        rounded
-        class="my-2"
-      >
-        {{ link }}
-      </v-btn>
+       <div class="my-2">
+          <router-link v-bind:to="'/Rules'"><v-btn text color="white">Rules</v-btn></router-link>
+      </div>
+       <div class="my-2">
+          <router-link v-bind:to="'/Contact'"><v-btn text color="white">Contact</v-btn></router-link>
+      </div>
+       <div class="my-2">
+          <router-link v-bind:to="'/Score'"><v-btn text color="white">Statistique</v-btn></router-link>
+      </div>
 
       <v-col
         class="primary lighten-2 py-4 text-center white--text"
@@ -57,43 +55,4 @@
 
 </template>
 
-<script>
-export default {
-  name: 'App',
-  components: {
-  },
-  data: () => ({
-    links: [
-      'Home',
-      'About Us',
-       'Team',
-      'Services',
-      'Blog',
-      'Contact Us'
-    ]
-    //
-  }),
 
-  methods: {
-    async LienQuizz1 () {
-      this.$router.push('/Accueil2')
-    },
-    async LienQuizz2 () {
-      this.$router.push('/Accueil2')
-    },
-    async LienScore () {
-      this.$router.push('/Test1')
-    },
-    async LienLogin () {
-      this.$router.push('/Test1')
-    },
-    async LienRules () {
-      this.$router.push('/login')
-    },
-    async LienContact () {
-      this.$router.push('/login')
-    }
-  }
-
-}
-</script>
