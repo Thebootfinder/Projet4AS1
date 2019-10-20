@@ -35,7 +35,8 @@
           @click="items"
         >
           <v-list-item-content>
-            <v-list-item-title v-text="subItem.title"></v-list-item-title>
+            <v-list-item-title @click="LienContact()" v-text="subItem.title2"></v-list-item-title>
+            <v-list-item-title v-text="subItem.title1"></v-list-item-title>
           </v-list-item-content>
         </v-list-item>
       </v-list-group>
@@ -52,7 +53,7 @@ export default {
           action: 'Quizz',
           title: 'choix du quizz',
           items: [
-            { title: 'test 1 ', href: '/Login' },
+            { title1: 'test 1 ', href: '/Login' },
             { title: 'test 2' }
           ]
         },
@@ -61,7 +62,7 @@ export default {
           title: 'Vos stats',
           active: false,
           items: [
-            { title: 'Score' },
+            { title2: 'Score' },
             { title: 'Login', icon: 'mdi-check-circle' }
           ]
         },
@@ -76,6 +77,15 @@ export default {
         }
       ]
     }
+  },
+  methods: {
+    async LienContact () {
+      this.$router.push('/Team')
+    },
+    async LienRules () {
+      this.$router.push('/Test1')
+    }
   }
+
 }
 </script>
