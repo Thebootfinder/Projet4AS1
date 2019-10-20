@@ -32,9 +32,16 @@
         <v-list-item
           v-for="subItem in item.items"
           :key="subItem.title"
-          @click="items"
+          @click=""
         >
           <v-list-item-content>
+            <v-list-item-title @click="LienQuizz1()" v-text="subItem.title1"></v-list-item-title>
+            <v-list-item-title @click="LienQuizz2()" v-text="subItem.title2"></v-list-item-title>
+            <v-list-item-title @click="LienScore()" v-text="subItem.title3"></v-list-item-title>
+            <v-list-item-title @click="LienLogin()" v-text="subItem.title4"></v-list-item-title>
+            <v-list-item-title @click="LienRules()" v-text="subItem.title5"></v-list-item-title>
+            <v-list-item-title @click="LienContact()" v-text="subItem.title6"></v-list-item-title>
+            
             <v-list-item-title v-text="subItem.title"></v-list-item-title>
           </v-list-item-content>
         </v-list-item>
@@ -52,8 +59,8 @@ export default {
           action: 'Quizz',
           title: 'choix du quizz',
           items: [
-            { title: 'test 1 ', href: '/Login' },
-            { title: 'test 2' }
+            { title1: 'Quizz 1' },
+            { title2: 'Quizz 2' }
           ]
         },
         {
@@ -61,8 +68,8 @@ export default {
           title: 'Vos stats',
           active: false,
           items: [
-            { title: 'Score' },
-            { title: 'Login', icon: 'mdi-check-circle' }
+            { title3: 'Score' },
+            { title4: 'Login', icon: 'mdi-check-circle' }
           ]
         },
         {
@@ -70,11 +77,32 @@ export default {
           title: 'Besoin d un coup de main',
           active: false,
           items: [
-            { title: 'Rules' },
-            { title: 'Contact' }
+            { title5: 'Rules' },
+            { title6: 'Contact' }
           ]
         }
       ]
+    }
+  },
+
+  methods: {
+    async LienQuizz1 () {
+      this.$router.push('/Test1')
+    },
+    async LienQuizz2 () {
+      this.$router.push('/Accueil2')
+    },
+    async LienScore () {
+      this.$router.push('/Score')
+    },
+    async LienLogin () {
+      this.$router.push('/Login')
+    },
+    async LienRules () {
+      this.$router.push('/Rules')
+    },
+    async LienContact () {
+      this.$router.push('/Contact')
     }
   }
 }

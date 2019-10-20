@@ -65,16 +65,35 @@ export default {
   data: () => ({
     links: [
       'Home',
-      { title: 'Pre-fab homes', href: '/', flex: 12 },
       'About Us',
-
-      'Team',
+       'Team',
       'Services',
       'Blog',
       'Contact Us'
     ]
     //
-  })
+  }),
+
+  methods: {
+    async LienQuizz1 () {
+      this.$router.push('/Accueil2')
+    },
+    async LienQuizz2 () {
+      this.$router.push('/Accueil2')
+    },
+    async LienScore () {
+      this.$router.push('/Test1')
+    },
+    async LienLogin () {
+      this.$router.push('/Test1')
+    },
+    async LienRules () {
+      this.$router.push('/login')
+    },
+    async LienContact () {
+      this.$router.push('/login')
+    }
+  }
 
 }
 </script>
