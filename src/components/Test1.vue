@@ -19,7 +19,9 @@
       <v-col
 
         class="d-flex align-center">
+
               <v-spacer></v-spacer>
+              
        <router-link v-bind:to="'/'"> <v-btn depressed large color="primary">Oui</v-btn>
        </router-link>
        <span>-- OU --</span>
