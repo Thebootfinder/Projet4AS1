@@ -5,6 +5,7 @@ import Vuerouter from 'vue-router'
 import Login from './components/Login'
 import Quizz from './components/Quizz'
 import Team from './components/Team'
+import Accueil from './components/Accueil'
 import Accueil2 from './components/Accueil2'
 import Rules from './components/Rules'
 import Contact from './components/Contact'
@@ -19,7 +20,7 @@ Vue.use(Vuerouter)
 
 const routes = [
   { path: '/Login', component: Login, meta: { requiresAuth: true } },
-  { path: '/', component: Accueil2, meta: { requiresAuth: false } },
+  { path: '/', component: Accueil, meta: { requiresAuth: false } },
   { path: '/Quizz', component: Quizz, meta: { requiresAuth: true } },
   { path: '/Team', component: Team, meta: { requiresAuth: false } },
   { path: '/Accueil2', component: Accueil2, meta: { requiresAuth: false } },

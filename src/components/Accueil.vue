@@ -32,7 +32,7 @@
         <v-list-item
           v-for="subItem in item.items"
           :key="subItem.title"
-          @click=""
+          @click="q"
         >
           <v-list-item-content>
             <v-list-item-title @click="LienQuizz1()" v-text="subItem.title1"></v-list-item-title>
@@ -85,7 +85,7 @@ export default {
 
   methods: {
     async LienQuizz1 () {
-      this.$router.push('/Test1')
+      this.$router.push('/Quizz ')
     },
     async LienQuizz2 () {
       this.$router.push('/Accueil2')
