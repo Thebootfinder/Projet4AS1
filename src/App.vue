@@ -6,9 +6,12 @@
         <span class="font-weight-light">Quizz</span>
       </v-toolbar-title>
       <v-spacer></v-spacer>
-      <v-btn text>
+      <router-link :to="{ path: '/' }">
+         <v-btn text>
         <span class="mr-2">KPS</span>
       </v-btn>
+      </router-link>
+
     </v-app-bar>
 
     <v-content>
@@ -53,6 +56,7 @@ export default {
   data: () => ({
     links: [
       'Home',
+      { title: 'Pre-fab homes', href: '/', flex: 12 },
       'About Us',
       'Team',
       'Services',
@@ -61,5 +65,6 @@ export default {
     ]
     //
   })
+
 }
 </script>

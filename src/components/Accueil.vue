@@ -1,136 +1,80 @@
-
 <template>
-    <div>
-        <v-row>
-<v-card
-    class="mx-auto"
-    max-width="400"
-  >
-    <v-img
-      class="white--text align-end"
-      height="200px"
-      src="https://cdn.vuetifyjs.com/images/cards/docks.jpg"
-    >
-      <v-card-title>Top 10 Australian beaches</v-card-title>
-    </v-img>
-
-    <v-card-subtitle class="pb-0">Number 10</v-card-subtitle>
-
-    <v-card-text class="text--primary">
-      <div>Whitehaven Beach</div>
-
-      <div>Whitsunday Island, Whitsunday Islands</div>
-    </v-card-text>
-
-    <v-card-actions>
-      <v-btn
-        color="orange"
-        text
-      >
-        Share
-      </v-btn>
-
-      <v-btn
-        color="orange"
-        text
-      >
-        Explore
-      </v-btn>
-    </v-card-actions>
-  </v-card>
   <v-card
+
+    min-width="500"
+    min-height="400"
     class="mx-auto"
-    max-width="400"
   >
-    <v-img
-      class="white--text align-end"
-      height="200px"
-      src="https://cdn.vuetifyjs.com/images/cards/docks.jpg"
+    <v-toolbar
+      color="blue"
+      dark
     >
-      <v-card-title>Top 10 Australian beaches</v-card-title>
-    </v-img>
 
-    <v-card-subtitle class="pb-0">Number 10</v-card-subtitle>
+      <v-toolbar-title>Voici ce que vous pouvez faire </v-toolbar-title>
 
-    <v-card-text class="text--primary">
-      <div>Whitehaven Beach</div>
+      <v-spacer></v-spacer>
+    </v-toolbar>
 
-      <div>Whitsunday Island, Whitsunday Islands</div>
-    </v-card-text>
-
-    <v-card-actions>
-      <v-btn
-        color="orange"
-        text
+    <v-list>
+      <v-list-group
+        v-for="item in items"
+        :key="item.title"
+        v-model="item.active"
+        :prepend-icon="item.action"
+        no-action
       >
-        Share
-      </v-btn>
+        <template v-slot:activator>
+          <v-list-item-content>
+            <v-list-item-title v-text="item.title"></v-list-item-title>
+          </v-list-item-content>
+        </template>
 
-      <v-btn
-        color="orange"
-        text
-      >
-        Explore
-      </v-btn>
-    </v-card-actions>
+        <v-list-item
+          v-for="subItem in item.items"
+          :key="subItem.title"
+          @click="items"
+        >
+          <v-list-item-content>
+            <v-list-item-title v-text="subItem.title"></v-list-item-title>
+          </v-list-item-content>
+        </v-list-item>
+      </v-list-group>
+    </v-list>
   </v-card>
-  <v-card
-    class="mx-auto"
-    max-width="400"
-  >
-    <v-img
-      class="white--text align-end"
-      height="200px"
-      src="https://cdn.vuetifyjs.com/images/cards/docks.jpg"
-    >
-      <v-card-title>Top 10 Australian beaches</v-card-title>
-    </v-img>
-
-    <v-card-subtitle class="pb-0">Number 10</v-card-subtitle>
-
-    <v-card-text class="text--primary">
-      <div>Whitehaven Beach</div>
-
-      <div>Whitsunday Island, Whitsunday Islands</div>
-    </v-card-text>
-
-    <v-card-actions>
-      <v-btn
-        color="orange"
-        text
-      >
-        Share
-      </v-btn>
-
-      <v-btn
-        color="orange"
-        text
-      >
-        Explore
-      </v-btn>
-    </v-card-actions>
-  </v-card>
-        </v-row>
-
-        
-  </div>
-  
 </template>
+
 <script>
 export default {
-  data: () => ({
-    message: 'coucou',
-    Ok: 'OK',
-    todos: [
-      { text: 'Apprendre JavaScript' },
-      { text: 'Apprendre Vue' },
-      { text: 'Créer quelque chose de génial' }
-    ]
-  }),
-
-  methods: {
-    reverseMessage: function () {
-      this.message = this.message.split('').reverse().join('')
+  data () {
+    return {
+      items: [
+        {
+          action: 'Quizz',
+          title: 'choix du quizz',
+          items: [
+            { title: 'test 1 ', href: '/Login' },
+            { title: 'test 2' }
+          ]
+        },
+        {
+          action: 'Statistique',
+          title: 'Vos stats',
+          active: false,
+          items: [
+            { title: 'Score' },
+            { title: 'Login', icon: 'mdi-check-circle' }
+          ]
+        },
+        {
+          action: 'Aide',
+          title: 'Besoin d un coup de main',
+          active: false,
+          items: [
+            { title: 'Rules' },
+            { title: 'Contact' }
+          ]
+        }
+      ]
     }
   }
 }
