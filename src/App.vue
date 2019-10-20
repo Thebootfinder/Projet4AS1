@@ -34,7 +34,7 @@
           <router-link v-bind:to="'/team'"><v-btn text color="white">Team</v-btn></router-link>
       </div>
        <div class="my-2">
-          <router-link v-bind:to="'/Rules'"><v-btn text color="white">Rules</v-btn></router-link>
+          <router-link v-bind:to="'/Rules'"><v-btn text color="white">Rules et FAQ </v-btn></router-link>
       </div>
        <div class="my-2">
           <router-link v-bind:to="'/Contact'"><v-btn text color="white">Contact</v-btn></router-link>
@@ -54,5 +54,3 @@
       </v-app>
 
 </template>
-
-
