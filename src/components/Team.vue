@@ -37,9 +37,9 @@ export default {
   data () {
     return {
       items: [
-        {  title: 'Martin GEILLON', avatar: '/src/assets/martin.jpg' },
+        { title: 'Martin GEILLON', avatar: 'src/assets/logo.png' },
         { title: 'Hugo BLEUZE', avatar: 'https://cdn.vuetifyjs.com/images/lists/2.jpg' },
-        { title: 'Charles Maziarski', avatar: 'https://cdn.vuetifyjs.com/images/lists/3.jpg' },
+        { title: 'Charles Maziarski', avatar: 'https://cdn.vuetifyjs.com/images/lists/3.jpg' }
       ]
     }
   }

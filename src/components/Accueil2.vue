@@ -26,22 +26,21 @@
         <v-card flat color="grey">
           <v-card-text>{{ text }}</v-card-text>
         </v-card>
-        
       </v-tab-item>
     </v-tabs-items>
   </v-card>
 </template>
 
 <script>
-export default {
-  data () {
-    return {
-      tab: null,
-      items: [
-        'Quizz', 'Help', 'Statistique'
-      ],
-      text: 'test'
-    }
+  export default {
+    data () {
+      return {
+        tab: null,
+        items: [
+          'Quizz', 'Help', 'Statistique'
+        ],
+        text: 'test'
+      }
+    },
   }
-}
 </script>
