@@ -3,18 +3,46 @@
     <v-app-bar app>
       <v-toolbar-title class="headline text-uppercase">
         <span>The </span>
-        <span class="font-weight-light">T*ST</span>
+        <span class="font-weight-light">Quizz</span>
       </v-toolbar-title>
       <v-spacer></v-spacer>
       <v-btn text>
-        <span class="mr-2">Test</span>
+        <span class="mr-2">KPS</span>
       </v-btn>
     </v-app-bar>
 
     <v-content>
     <router-view></router-view>
     </v-content>
-  </v-app>
+
+    <v-footer
+    color="primary lighten-1"
+    padless
+  >
+    <v-row
+      justify="center"
+      no-gutters
+    >
+      <v-btn
+        v-for="link in links"
+        :key="link"
+        color="white"
+        text
+        rounded
+        class="my-2"
+      >
+        {{ link }}
+      </v-btn>
+      <v-col
+        class="primary lighten-2 py-4 text-center white--text"
+        cols="12"
+      >
+        {{ new Date().getFullYear() }} — <strong>Quizz</strong>
+      </v-col>
+    </v-row>
+  </v-footer>
+      </v-app>
+
 </template>
 
 <script>
@@ -23,6 +51,14 @@ export default {
   components: {
   },
   data: () => ({
+    links: [
+      'Home',
+      'About Us',
+      'Team',
+      'Services',
+      'Blog',
+      'Contact Us'
+    ]
     //
   })
 }
