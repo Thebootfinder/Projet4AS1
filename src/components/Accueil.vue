@@ -86,6 +86,7 @@ export default {
   methods: {
     async LienQuizz1 () {
       this.$router.push('/Quizz ')
+      this.$router.go()
     },
     async LienQuizz2 () {
       this.$router.push('/Accueil2')

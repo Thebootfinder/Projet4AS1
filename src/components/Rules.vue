@@ -1,4 +1,5 @@
 <template>
+<v-container flex >
   <v-card
     max-width="600"
     class="mx-auto"
@@ -41,6 +42,7 @@
       </template>
     </v-list>
   </v-card>
+</v-container>
 </template>
 
 <script>
@@ -55,8 +57,15 @@ export default {
       },
       { divider: true, inset: true },
       {
-        title: 'Problème <span class="grey--text text--lighten-1">4</span>',
-        subtitle: "<span class='text--primary'>Mon score est nul !</span> &mdash; Tente de le refaire afin de t améliorer !, l entrainement est la meilleur méthode"
+        title: 'Problème',
+        subtitle: "<span class='text--primary'>Mon score est nul !</span> &mdash; Tente de le refaire afin de t améliorer !, l entrainement est la meilleur méthode",
+        subtitle2: "<span class='text--primary'>Résultat</span> &mdash; Vous avez eu un problème et vous voulez qu'il soit corrigé ! Contacte nous ( adresse mail en page de contact)"
+      },
+       { divider: true, inset: true },
+       {
+        title: 'Dans quel contexte à été créer ce site? ',
+        subtitle: "<span class='text--primary'>Etude</span> &mdash; Ce site à été crée pour un projet de 4eme année, permettant d'apprendre à utiliser vue.js et beaucoup d'autre choses",
+      
       }
     ]
   })
