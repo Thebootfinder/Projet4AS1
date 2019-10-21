@@ -1,9 +1,13 @@
 <template>
  <v-parallax
+  breakpoint="(min-width: 80px)"
     height = 800
     src="https://cdn.vuetifyjs.com/images/backgrounds/vbanner.jpg"
   >
 <v-container>
+ <v-card-title class="text-center justify-center py-6">
+      <h1 class="font-weight-bold display-3 basil--text">WELCOME ICI MON AMIS</h1>
+    </v-card-title>
    <v-row>
     <v-card
             max-width = 600
