@@ -21,13 +21,13 @@ Vue.use(Vuerouter)
 
 const routes = [
   { path: '/Login', component: Login, meta: { requiresAuth: true } },
-  { path: '/', component: Accueil, meta: { requiresAuth: false } },
+  { path: '/Accueil', component: Accueil, meta: { requiresAuth: false } },
   { path: '/Quizz', component: Quizz, meta: { requiresAuth: true } },
   { path: '/Team', component: Team, meta: { requiresAuth: false } },
   { path: '/Accueil2', component: Accueil2, meta: { requiresAuth: false } },
   { path: '/Rules', component: Rules, meta: { requiresAuth: false } },
   { path: '/Score', component: Score, meta: { requiresAuth: false } },
-  { path: '/Accueil3', component: Accueil3, meta: { requiresAuth: false } },
+  { path: '/', component: Accueil3, meta: { requiresAuth: false } },
   { path: '/Contact', component: Contact, meta: { requiresAuth: false } }
 ]
 

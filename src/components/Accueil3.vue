@@ -1,26 +1,34 @@
 <template>
- <v-parallax
-  breakpoint="(min-width: 80px)"
-    height = 800
-    src="https://cdn.vuetifyjs.com/images/backgrounds/vbanner.jpg"
-  >
-<v-container>
+
+<v-container flex >
+
  <v-card-title class="text-center justify-center py-6">
-      <h1 class="font-weight-bold display-3 basil--text">WELCOME ICI MON AMIS</h1>
+   <v-row justify="center">
+   <v-toolbar
+      color="cyan"
+      dark
+      >
+      <v-row justify="center">
+      <v-toolbar-title justify-content="center">WELCOME MON AMI</v-toolbar-title>
+      </v-row>
+
+    </v-toolbar>
+  </v-row>
     </v-card-title>
-   <v-row>
+
+   <v-row justify="center">
     <v-card
             max-width = 600
             min-width = 600
             color="#385F73"
             dark
-            class = ma-1
-          >
-            <v-card-title class="headline">Quizz 1 </v-card-title>
+            class = ma-2
+                   >
+            <v-card-title class = "text-center justify-center py-6">Quizz 1 </v-card-title>
 
-            <v-card-subtitle class = ma-4> Le test que tu dois faire dès maintenant !</v-card-subtitle>
+            <v-card-subtitle class = ma-4> Le test que tu dois faire dès maintenant ! Fait le où tu le regretteras à jamais</v-card-subtitle>
 
-            <v-card-actions>
+            <v-card-actions class = "text-center justify-center py-6">
                    <v-icon>mdi-xbox-controller</v-icon>
              <router-link :to="{ path: '/Quizz' }"> <v-btn text >Lancer le Quizz !</v-btn> </router-link>
             </v-card-actions>
@@ -28,39 +36,42 @@
             <v-card
             color="navy"
             dark
-            class = ma-1
+            class = ma-2
                 max-width = 600
             min-width = 600
           >
-            <v-card-title class="headline">Quizz Number Two</v-card-title>
+            <v-card-title class="text-center justify-center py-6">Quizz Number Two</v-card-title>
 
-            <v-card-subtitle class = ma-4> Participe à ce quizz et découvre ce que tu découvriras </v-card-subtitle>
-<v-col>
-            <v-card-actions>
+            <v-card-subtitle class = ma-4> Participe à ce quizz et découvre ce que tu découvriras ( ps : c'est génial) </v-card-subtitle>
+
+            <v-card-actions class = "text-center justify-center py-6">
              <v-icon>mdi-xbox-controller</v-icon>
-<router-link :to="{ path: '/Quizz' }"> <v-btn text >Lancer le Quizz !</v-btn> </router-link>
+<router-link :to="{ path: '/Quizz2' }"> <v-btn text >Lancer le Quizz !</v-btn> </router-link>
             </v-card-actions>
-</v-col>
+
           </v-card>
            <v-card
-           class = ma-1
+           class = ma-2
             color="grey"
             dark
                 max-width = 600
             min-width = 600
           >
-            <v-card-title class="headline">Aide</v-card-title>
+            <v-card-title class = "text-center justify-center py-6">Aide</v-card-title>
 
             <v-card-subtitle class = ma-4 >Envie de connaitre les règles ? de s'informer ? de rapporter un bug ? Tout est là ! </v-card-subtitle>
 
-            <v-card-actions>
-               <router-link :to="{ path: '/Quizz' }"> <v-btn text >Règles et FAQ</v-btn> </router-link>
-               <router-link :to="{ path: '/Quizz' }"> <v-btn text >TEAM</v-btn> </router-link>
-                <router-link :to="{ path: '/Quizz' }"> <v-btn text >Contact</v-btn> </router-link>
+            <v-card-actions class = "text-center justify-center py-6">
+              <v-icon dark>mdi-wrench</v-icon>
+               <router-link :to="{ path: '/Rules' }"> <v-btn text >Règles et FAQ</v-btn> </router-link>
+             <v-icon >mdi-domain</v-icon>
+               <router-link :to="{ path: '/Team' }"> <v-btn text >TEAM</v-btn> </router-link>
+               <v-icon>mdi-email</v-icon>
+                <router-link :to="{ path: '/Contact' }"> <v-btn text >Contact</v-btn> </router-link>
             </v-card-actions>
           </v-card>
+
 </v-row>
 </v-container>
-</v-parallax>
 
 </template>
