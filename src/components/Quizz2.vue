@@ -1,4 +1,3 @@
-
 <template>
   <v-container>
     <v-card class="mx-auto" max-width="600" min-height="300" outlined>
@@ -31,10 +30,10 @@ export default {
     i: 0,
     TitreActuel: 'Question 1',
     Titre: ['Question 2', 'Question 3', 'Question 4'],
-    QuestionActuelle: 'As-tu déjà séché un cour ?',
-    Question: ['As-tu déjà été viré de cour ?', 'As-tu collé un chewing-gum sous la table en cour ?', 'As-tu déjà triché pendant un contrôle ?'],
+    QuestionActuelle: 'As-tu déjà aider un camarade dans un cours ?',
+    Question: ['As-tu déjà pris le cours pour un camarade abscent pour lui donner ?', 'As-tu déja prêté du matériel à un camarade de classe ?', 'As-tu déjà sauvé un camarade pour un projet ?'],
     ScoreActuel: 0,
-    Score: [10, 0, 15, 0, 7, 0, 20, 0],
+    Score: [7, 0, 15, 0, 10, 0, 23, 0],
     IndexScore: 0,
     nbrQuestion: 4
 
@@ -49,7 +48,7 @@ export default {
       this.ScoreActuel = ScoreTemp + Score[indexScore]
       if (index + 1 === nbrQuestion) {
         sessionStorage.setItem('Score', this.ScoreActuel)
-        sessionStorage.setItem('NumeroQuizz', 'Quizz de la Négativité')
+        sessionStorage.setItem('NumeroQuizz', 'Quizz de la Positivité')
         this.$router.push('/Score ')
         this.$router.go()
       } else {
@@ -68,7 +67,7 @@ export default {
       this.ScoreActuel = ScoreTemp + Score[indexScore + 1]
       if (index + 1 === nbrQuestion) {
         sessionStorage.setItem('Score', this.ScoreActuel)
-        sessionStorage.setItem('NumeroQuizz', 'Quizz de la Négativité')
+        sessionStorage.setItem('NumeroQuizz', 'Quizz de la Positivité')
         this.$router.push('/Score ')
         this.$router.go()
       } else {

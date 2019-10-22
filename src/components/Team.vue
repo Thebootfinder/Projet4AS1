@@ -1,8 +1,8 @@
 <template>
 <v-container flex >
   <v-card
-    max-width="100"
-    min-width="500"
+    max-width="620"
+    min-width="620"
     class="mx-auto"
   >
     <v-toolbar

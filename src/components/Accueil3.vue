@@ -24,9 +24,9 @@
             dark
             class = ma-2
                    >
-            <v-card-title class = "text-center justify-center py-6">Quizz 1 </v-card-title>
+            <v-card-title class = "text-center justify-center py-6">Quizz de la Négativité </v-card-title>
 
-            <v-card-subtitle class = ma-4> Le test que tu dois faire dès maintenant ! Fait le où tu le regretteras à jamais</v-card-subtitle>
+            <v-card-subtitle class = ma-4> Le test que tu dois faire dès maintenant ! Découvre si tu es réellement maléfique</v-card-subtitle>
 
             <v-card-actions class = "text-center justify-center py-6">
                    <v-icon>mdi-xbox-controller</v-icon>
@@ -40,9 +40,9 @@
                 max-width = 600
             min-width = 600
           >
-            <v-card-title class="text-center justify-center py-6">Quizz Number Two</v-card-title>
+            <v-card-title class="text-center justify-center py-6">Quizz de la Positivité</v-card-title>
 
-            <v-card-subtitle class = ma-4> Participe à ce quizz et découvre ce que tu découvriras ( ps : c'est génial) </v-card-subtitle>
+            <v-card-subtitle class = ma-4> Participe et découvre si tu es un homme qui a comme philosophie : Le Bien</v-card-subtitle>
 
             <v-card-actions class = "text-center justify-center py-6">
              <v-icon>mdi-xbox-controller</v-icon>

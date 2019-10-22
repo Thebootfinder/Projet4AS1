@@ -1,7 +1,7 @@
 <template>
 <v-container flex >
   <v-card
-    max-width="600"
+    max-width="620"
     class="mx-auto"
   >
     <v-toolbar
@@ -51,19 +51,19 @@ export default {
     items: [
       {
         title: 'Mail du support ',
-        subtitle: "<span class='text--primary'>geillon@et.esiea.fr </span> &mdash; Merci de bien mettre en objet votre problème",
+        subtitle: "<span class='text--primary'>geillon@et.esiea.fr </span> &mdash; Merci de bien mettre en objet votre problème"
       },
       { divider: true, inset: true },
       {
         title: 'Fail / Bug - Equipe technique',
-        subtitle: "<span class='text--primary'>bleuze@et.esiea.fr</span> &mdash; Merci de bien mettre en objet le problème rencontré",
+        subtitle: "<span class='text--primary'>bleuze@et.esiea.fr</span> &mdash; Merci de bien mettre en objet le problème rencontré"
       },
-       { divider: true, inset: true },
-       {
+      { divider: true, inset: true },
+      {
         title: 'Suggestion',
         subtitle: "<span class='text--primary'>geillon@et.esiea.fr</span> ",
         subtitle2: "<span class='text--primary'>bleuze@et.esiea.fr</span> "
-      
+
       }
     ]
   })
