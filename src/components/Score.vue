@@ -14,6 +14,9 @@
           :key="i"
         >
           <v-list-item-content>
+            <v-list-item-title v-text="item.NumeroQuizz"></v-list-item-title>
+          </v-list-item-content>
+          <v-list-item-content>
             <v-list-item-title v-text="item.User"></v-list-item-title>
           </v-list-item-content>
           <v-list-item-content>
@@ -48,9 +51,9 @@ export default {
     disable: false,
 
     items: [
-      { User: 'Hugo', Score: '20 Points', Day: '18/', Month: '10/', Year: '2019', Hour: '17:', Minute: '02' },
-      { User: 'Martin', Score: '10 Points', Day: '20/', Month: '10/', Year: '2019', Hour: '20:', Minute: '44' },
-      { User: 'Maman', Score: '30 Points', Day: '21/', Month: '10/', Year: '2019', Hour: '21:', Minute: '08' }
+      { NumeroQuizz: 'Quizz 1', User: 'Hugo', Score: '20 Points', Day: '18/', Month: '10/', Year: '2019', Hour: '17:', Minute: '02' },
+      { NumeroQuizz: 'Quizz 2', User: 'Martin', Score: '10 Points', Day: '20/', Month: '10/', Year: '2019', Hour: '20:', Minute: '44' },
+      { NumeroQuizz: 'Quizz 2', User: 'Maman', Score: '30 Points', Day: '21/', Month: '10/', Year: '2019', Hour: '21:', Minute: '08' }
     ]
   }),
   methods: {
@@ -73,7 +76,7 @@ export default {
     },
 
     async push (items, DayActuelle, MonthActuel, YearActuel, HourActuel, MinuteActuel) {
-      var ScoreUser = { User: sessionStorage.session_username, Score: sessionStorage.Score + ' Points', Day: DayActuelle, Month: MonthActuel, Year: YearActuel, Hour: HourActuel, Minute: MinuteActuel }
+      var ScoreUser = { NumeroQuizz: sessionStorage.NumeroQuizz, User: sessionStorage.session_username, Score: sessionStorage.Score + ' Points', Day: DayActuelle, Month: MonthActuel, Year: YearActuel, Hour: HourActuel, Minute: MinuteActuel }
       this.items = items.concat(ScoreUser)
       this.disable = true
     }

@@ -9,7 +9,6 @@
             <div>{{TitreActuel}}</div>
           </v-list-item-title>
           <v-card-text>{{QuestionActuelle}}</v-card-text>
-        <v-card-text>{{ScoreActuel}}</v-card-text>
         </v-list-item-content>
       </v-list-item>
       <v-card-actions>
@@ -50,6 +49,7 @@ export default {
       this.ScoreActuel = ScoreTemp + Score[indexScore]
       if (index + 1 === nbrQuestion) {
         sessionStorage.setItem('Score', this.ScoreActuel)
+        sessionStorage.setItem('NumeroQuizz', 'Quizz 1')
         this.$router.push('/Score ')
         this.$router.go()
       } else {
@@ -68,6 +68,7 @@ export default {
       this.ScoreActuel = ScoreTemp + Score[indexScore + 1]
       if (index + 1 === nbrQuestion) {
         sessionStorage.setItem('Score', this.ScoreActuel)
+        sessionStorage.setItem('NumeroQuizz', 'Quizz 1')
         this.$router.push('/Score ')
         this.$router.go()
       } else {
