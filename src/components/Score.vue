@@ -3,7 +3,7 @@
  <v-card
 
     class="mx-auto"
-    max-width="500"
+    max-width="800"
     tile
   >
     <v-list flat>
@@ -51,9 +51,9 @@ export default {
     disable: false,
 
     items: [
-      { NumeroQuizz: 'Quizz 1', User: 'Hugo', Score: '20 Points', Day: '18/', Month: '10/', Year: '2019', Hour: '17:', Minute: '02' },
-      { NumeroQuizz: 'Quizz 2', User: 'Martin', Score: '10 Points', Day: '20/', Month: '10/', Year: '2019', Hour: '20:', Minute: '44' },
-      { NumeroQuizz: 'Quizz 2', User: 'Maman', Score: '30 Points', Day: '21/', Month: '10/', Year: '2019', Hour: '21:', Minute: '08' }
+      { NumeroQuizz: 'Quizz de la Positivité', User: 'Hugo', Score: '20 Points', Day: '18/', Month: '10/', Year: '2019', Hour: '17:', Minute: '02' },
+      { NumeroQuizz: 'Quizz de la Négativité', User: 'Martin', Score: '10 Points', Day: '20/', Month: '10/', Year: '2019', Hour: '20:', Minute: '44' },
+      { NumeroQuizz: 'Quizz de la Négativité', User: 'Maman', Score: '30 Points', Day: '21/', Month: '10/', Year: '2019', Hour: '21:', Minute: '08' }
     ]
   }),
   methods: {
@@ -62,6 +62,7 @@ export default {
     },
 
     async TakeDate () {
+      console.log(Date())
       var D = new Date()
       var d = D.getDate()
       var M = D.getMonth() + 1
