@@ -16,7 +16,6 @@
         <v-row justify="center">
           <v-btn class="ma-4" depressed large color="primary" @click="ReponseOUI(Titre, Question, Score, i, IndexScore, nbrQuestion)">Oui</v-btn>
           <v-btn class="ma-4" depressed large color="red" @click="ReponseNON(Titre, Question, Score, i, IndexScore, nbrQuestion)">Non</v-btn>
-          <v-icon>mdi-heart</v-icon>
         </v-row>
       </v-card-actions>
     </v-card>
@@ -33,10 +32,10 @@ export default {
     i: 0,
     TitreActuel: 'Question1',
     Titre: ['Question2', 'Question3', 'Question4'],
-    QuestionActuelle: 'JE SUIS UNE QUESTION 1',
-    Question: ['JE SUIS UNE QUESTION 2', 'JE SUIS UNE QUESTION 3', 'JE SUIS UNE QUESTION 4'],
+    QuestionActuelle: 'As-tu déjà séché un cour ?',
+    Question: ['As-tu déjà été viré de cour ?', 'As-tu collé un chewing-gum sous la table en cour ?', 'As-tu déjà triché pendant un contrôle ?'],
     ScoreActuel: 0,
-    Score: [10, 0, 0, 5, 10, 0],
+    Score: [10, 0, 15, 0, 7, 0, 20, 0],
     IndexScore: 0,
     nbrQuestion: 4
 
@@ -50,7 +49,7 @@ export default {
       var ScoreTemp = this.ScoreActuel
       this.ScoreActuel = ScoreTemp + Score[indexScore]
       if (index + 1 === nbrQuestion) {
-        sessionStorage.setItem('Score', ScoreTemp)
+        sessionStorage.setItem('Score', this.ScoreActuel)
         this.$router.push('/Score ')
         this.$router.go()
       } else {
@@ -68,7 +67,7 @@ export default {
       var ScoreTemp = this.ScoreActuel
       this.ScoreActuel = ScoreTemp + Score[indexScore + 1]
       if (index + 1 === nbrQuestion) {
-        sessionStorage.setItem('Score', ScoreTemp)
+        sessionStorage.setItem('Score', this.ScoreActuel)
         this.$router.push('/Score ')
         this.$router.go()
       } else {

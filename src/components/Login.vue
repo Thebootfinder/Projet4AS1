@@ -1,8 +1,16 @@
 <template>
   <v-container>
     <v-row justify="center">
+    <h2 class="ma-1"> Bienvenue sur THE QUIZZ </h2>
+    </v-row>
+    <v-row justify="center">
+    <h3>Connectez-vous ou enregistrez-vous</h3>
+    </v-row>
+    <v-row justify="center">
+    <v-alert class="ma-2" v-model="show" :type="msgType">{{Message}}</v-alert>
+    </v-row>
+    <v-row justify="center">
       <v-form>
-        <v-alert v-model="show" :type="error" color="red">{{Message}}</v-alert>
         <v-col md="16">
           <v-text-field color="black" filled clearable v-model="Username" label="Identifiant"></v-text-field>
           <v-text-field
@@ -36,6 +44,7 @@ export default {
       if (this.Password === '' || this.Username === '') {
         console.log('Champs Vide')
         this.Message = 'ID et Mot de Passe Requis !'
+        this.msgType = 'warning'
         this.show = true
       } else {
         console.log('login request')
@@ -52,7 +61,7 @@ export default {
         } else {
           console.log('combinaison valide')
           sessionStorage.setItem('session_username', this.Username)
-          this.$router.push('/')
+          this.$router.push('/Accueil3')
         }
       }
     },
@@ -61,7 +70,7 @@ export default {
       if (this.Password === '' || this.Username === '') {
         console.log('Champs Vide')
         this.msgType = 'warning'
-        this.Message = 'ID ou Mot de Passe Requis !'
+        this.Message = "Entrez l'ID et Mot de Passe souhaités avant de cliquer sur Register"
         this.show = true
       } else {
         const jsondata = await this.axios.post(

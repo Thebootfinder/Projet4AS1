@@ -58,7 +58,7 @@ export default {
       { divider: true, inset: true },
       {
         title: 'Problème',
-        subtitle: "<span class='text--primary'>Mon score est nul !</span> &mdash; Tente de le refaire afin de t améliorer !, l entrainement est la meilleur méthode",
+        subtitle: "<span class='text--primary'>Mon score est nul !</span> &mdash; Tente de le refaire afin de t'améliorer !, l entrainement est la meilleur méthode",
         subtitle2: "<span class='text--primary'>Résultat</span> &mdash; Vous avez eu un problème et vous voulez qu'il soit corrigé ! Contacte nous ( adresse mail en page de contact)"
       },
        { divider: true, inset: true },

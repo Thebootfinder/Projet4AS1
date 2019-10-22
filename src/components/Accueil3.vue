@@ -9,7 +9,7 @@
       dark
       >
       <v-row justify="center">
-      <v-toolbar-title justify-content="center">WELCOME MON AMI</v-toolbar-title>
+      <v-toolbar-title justify-content="center">Bienvenue sur THE QUIZZ</v-toolbar-title>
       </v-row>
 
     </v-toolbar>

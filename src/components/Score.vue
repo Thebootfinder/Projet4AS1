@@ -28,8 +28,10 @@
     <v-row justify="center">
       <v-btn class="ma-2" color="green" :disabled="disable" @click="TakeDate() + push(items, DayActuelle, MonthActuel, YearActuel, HourActuel, MinuteActuel)"> Ajouter votre Score </v-btn>
     </v-row>
-  </v-card>
-
+    </v-card>
+    <v-row class="ma-4" justify="center">
+      <v-btn class="ma-2" color="blue" @click="RetourMenu()"> Retour au menu </v-btn>
+    </v-row>
   </v-container>
 
 </template>
@@ -47,11 +49,15 @@ export default {
 
     items: [
       { User: 'Hugo', Score: '20 Points', Day: '18/', Month: '10/', Year: '2019', Hour: '17:', Minute: '02' },
-      { User: 'Hugo', Score: '10 Points', Day: '20/', Month: '10/', Year: '2019', Hour: '20:', Minute: '44' },
-      { User: 'Hugo', Score: '30 Points', Day: '21/', Month: '10/', Year: '2019', Hour: '21:', Minute: '08' }
+      { User: 'Martin', Score: '10 Points', Day: '20/', Month: '10/', Year: '2019', Hour: '20:', Minute: '44' },
+      { User: 'Maman', Score: '30 Points', Day: '21/', Month: '10/', Year: '2019', Hour: '21:', Minute: '08' }
     ]
   }),
   methods: {
+    async RetourMenu () {
+      this.$router.push('./Accueil3')
+    },
+
     async TakeDate () {
       var D = new Date()
       var d = D.getDate()
@@ -67,7 +73,6 @@ export default {
     },
 
     async push (items, DayActuelle, MonthActuel, YearActuel, HourActuel, MinuteActuel) {
-
       var ScoreUser = { User: sessionStorage.session_username, Score: sessionStorage.Score + ' Points', Day: DayActuelle, Month: MonthActuel, Year: YearActuel, Hour: HourActuel, Minute: MinuteActuel }
       this.items = items.concat(ScoreUser)
       this.disable = true

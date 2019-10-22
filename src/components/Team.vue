@@ -19,14 +19,13 @@
         v-for="item in items"
         :key="item.title"
       >
-
+     
         <v-list-item-content>
           <v-list-item-title v-text="item.title"></v-list-item-title>
-        </v-list-item-content>
-
-        <v-list-item-avatar>
-          <v-img :src="item.avatar"></v-img>
-        </v-list-item-avatar>
+        </v-list-item-content> 
+        <v-list-item-icon>
+          <v-icon v-text="item.icon"></v-icon>
+        </v-list-item-icon>
       </v-list-item>
     </v-list>
   </v-card>
@@ -38,9 +37,8 @@ export default {
   data () {
     return {
       items: [
-        { title: 'Martin GEILLON', avatar: 'src/assets/logo.png' },
-        { title: 'Hugo BLEUZE', avatar: 'https://picsum.photos/id/41/1280/805' },
-        { title: 'Charles Maziarski', avatar: 'https://cdn.vuetifyjs.com/images/lists/3.jpg' }
+        { title: 'Martin GEILLON', icon: 'mdi-account' },
+        { title: 'Hugo BLEUZE', icon: 'mdi-account' }
       ]
     }
   }

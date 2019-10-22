@@ -6,7 +6,7 @@
         <span class="font-weight-light">Quizz</span>
       </v-toolbar-title>
       <v-spacer></v-spacer>
-      <router-link :to="{ path: '/' }">
+      <router-link :to="{ path: '/Accueil3' }">
          <v-btn text>
         <span class="mr-2">KPS</span>
       </v-btn>
@@ -28,7 +28,7 @@
     >
 
             <div class="my-2">
-         <router-link v-bind:to="'/'"><v-btn text color="white">Home</v-btn></router-link>
+         <router-link v-bind:to="'/Accueil3'"><v-btn text color="white">Home</v-btn></router-link>
       </div>
               <div class="my-2">
           <router-link v-bind:to="'/team'"><v-btn text color="white">Team</v-btn></router-link>
@@ -38,9 +38,6 @@
       </div>
        <div class="my-2">
           <router-link v-bind:to="'/Contact'"><v-btn text color="white">Contact</v-btn></router-link>
-      </div>
-       <div class="my-2">
-          <router-link v-bind:to="'/Score'"><v-btn text color="white">Statistique</v-btn></router-link>
       </div>
 
       <v-col
