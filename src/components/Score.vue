@@ -1,6 +1,7 @@
 <template>
 <v-container>
  <v-card
+
     class="mx-auto"
     max-width="500"
     tile
@@ -24,6 +25,9 @@
         </v-list-item>
       </v-list-item-group>
     </v-list>
+    <v-row justify="center">
+      <v-btn class="ma-2" color="green" :disabled="disable" @click="TakeDate() + push(items, DayActuelle, MonthActuel, YearActuel, HourActuel, MinuteActuel)"> Ajouter votre Score </v-btn>
+    </v-row>
   </v-card>
 
   </v-container>
@@ -31,7 +35,6 @@
 </template>
 
 <script>
-import ScoreActuel from './Quizz'
 export default {
   data: () => ({
     item: 1,
@@ -40,12 +43,12 @@ export default {
     YearActuel: 0,
     HourActuel: 0,
     MinuteActuel: 0,
-    ScoreActuel: ScoreActuel,
+    disable: false,
 
     items: [
-      { User: 'Hugo', Score: '20 Points', Day: '21/', Month: '10/', Year: '2019', Hour: '20:', Minute: '02' },
-      { User: 'Martin', Score: '30 Points', Day: '22/', Month: '10/', Year: '2019', Hour: '19:', Minute: '33' },
-      { User: 'Hugo', Score: '25 Points', Day: '23/', Month: '10/', Year: '2019', Hour: '18:', Minute: '45' }
+      { User: 'Hugo', Score: '20 Points', Day: '18/', Month: '10/', Year: '2019', Hour: '17:', Minute: '02' },
+      { User: 'Hugo', Score: '10 Points', Day: '20/', Month: '10/', Year: '2019', Hour: '20:', Minute: '44' },
+      { User: 'Hugo', Score: '30 Points', Day: '21/', Month: '10/', Year: '2019', Hour: '21:', Minute: '08' }
     ]
   }),
   methods: {
@@ -64,9 +67,12 @@ export default {
     },
 
     async push (items, DayActuelle, MonthActuel, YearActuel, HourActuel, MinuteActuel) {
+
       var ScoreUser = { User: sessionStorage.session_username, Score: sessionStorage.Score + ' Points', Day: DayActuelle, Month: MonthActuel, Year: YearActuel, Hour: HourActuel, Minute: MinuteActuel }
       this.items = items.concat(ScoreUser)
+      this.disable = true
     }
+
   }
 }
 </script>
