@@ -24,7 +24,7 @@
 </template>
 
 <script>
-
+import { } from './Score'
 export default {
   data: () => ({
     Hello: 'coucou',
