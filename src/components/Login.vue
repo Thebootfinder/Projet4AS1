@@ -48,7 +48,7 @@ export default {
         this.show = true
       } else {
         console.log('login request')
-        const login = await this.axios.post('http://localhost:4000/api/Login', {
+        const login = await this.axios.post('/api/Login', {
           username: this.Username,
           password: this.Password
         })
@@ -74,7 +74,7 @@ export default {
         this.show = true
       } else {
         const jsondata = await this.axios.post(
-          'http://localhost:4000/api/Register',
+          '/api/Register',
           {
             username: this.Username
           }
@@ -85,7 +85,7 @@ export default {
           this.Message = 'Le User ' + this.Username + ' existe deja !'
           this.show = true
         } else {
-          this.axios.post('http://localhost:4000/api/CreerUser', {
+          this.axios.post('/api/CreerUser', {
             username: this.Username,
             password: this.Password
           })

@@ -19,6 +19,9 @@ app.use(cors({
   origin: 'http://localhost:8080'
 }))
 
+const path = require('path')
+app.use(express.static(path.join(__dirname, 'dist/')))
+
 app.use(session({
   secret: 'blablabla', // changez cette valeur
   resave: false,
